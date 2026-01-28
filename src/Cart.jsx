@@ -1,48 +1,75 @@
+import { Link } from "react-router-dom";
+import useCartOnCartPage from "./useCartOnCartPage"; 
+import "./App.css"; 
 function Cart() {
-    return (
-        <div>
-            <body>
+  useCartOnCartPage();
 
-<header>
-  <nav className="navbar">
-    <div className="logo">
-      <img src="imagem/logo_caio_entre_livros-removebg-preview (2).png" alt="Logo"/>
-    </div>
+  return (
+     <>
+      <header>
+        <nav className="navbar">
+          <div className="logo">
+            <img src="logo_caio_entre_livros-removebg-preview (2).png" alt="Logo" />
+          </div>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#About">Sobre</a>
-      <a href="index.html#Menu">Catálogo</a>
-      <a href="index.html#Address">Endereço</a>
-      <a href="Cart.jsx">Carrinho 🛒</a>
-    </div>
+          <div className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/#About">Sobre</Link>
+            <Link to="/#Menu">Catálogo</Link>
+            <Link to="/#Address">Endereço</Link>
+            <Link to="/cart">Carrinho 🛒</Link>
+          </div>
 
-    <div className="nav-spacer"></div>
-  </nav>
-</header>
+          <div className="nav-spacer"></div>
+        </nav>
+      </header>
 
-<section className="cart" id="cart">
-  <div id="cart-section">
-    <h2 className="title">Seus <span>PEDIDOS</span></h2>
+      <section className="cart" id="cart">
+        <div id="cart-section">
+          <h2 className="title">
+            Seus <span>PEDIDOS</span>
+          </h2>
 
-    <div id="cartItems" style="margin-top: 18px; color: #fff; padding: 3rem;"></div>
+          <div
+            id="cartItems"
+            style={{ marginTop: 18, color: "#fff", padding: "3rem" }}
+          />
 
-      <div className="cart-summary">
-        <p ><strong style="font-size: 1.5rem; padding: 1rem; color:#fff">Itens:</strong> <span id="cartItemsCount">0</span></p>
-        <p style="font-size: 1.5rem; padding: 1rem; color: #fff;"><strong>Total:</strong> <span id="cartTotal" style="font-size: 1.6rem; padding: 0.2rem; color: #000000; background-color: #e1c8a0; border-radius: 6px;">R$ 0,00</span></p>
+          <div className="cart-summary">
+            <p>
+              <strong style={{ fontSize: "1.5rem", padding: "1rem", color: "#fff" }}>
+                Itens:
+              </strong>{" "}
+              <span id="cartItemsCount">0</span>
+            </p>
 
-      <div style="display:flex; gap:12px; flex-wrap:wrap;">
-        <a href="index.html#Menu" className="btn">Continuar comprando</a>
-        <a href="#" className="btn" id="clearCart">Limpar carrinho</a>
-        <a href="" className="btn">Finalizar compra</a>
-      </div>
-    </div>
-  </div>
-</section>
+            <p style={{ fontSize: "1.5rem", padding: "1rem", color: "#fff" }}>
+              <strong>Total:</strong>{" "}
+              <span
+                id="cartTotal"
+                style={{
+                  fontSize: "1.6rem",
+                  padding: "0.2rem",
+                  color: "#000000",
+                  backgroundColor: "#e1c8a0",
+                  borderRadius: 6,
+                }}
+              >
+                R$ 0,00
+              </span>
+            </p>
 
-</body>
+            <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+              <Link to="/#Menu" className="btn">Continuar comprando</Link>
+              <a href="#" className="btn" id="clearCart">Limpar carrinho</a>
+              <a href="" className="btn">Finalizar compra</a>
+            </div>
+          </div>
         </div>
-    )
+      </section>
+      useCartOnCartPage();
+   </>
+  );
 }
 
-export default Cart
+export default Cart;

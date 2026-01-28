@@ -144,7 +144,7 @@ nav.navbar {
       rgba(0,0,0,0.75) 55%,
       rgba(0, 0, 0, 0.95) 75%,
       rgba(13,12,11,1) 100%   
-    ), url(./imagem/bgImage.png);
+    ), url(bgImage.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

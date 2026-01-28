@@ -1,11 +1,13 @@
-import Cart from "./cart"
+
+import { Link } from "react-router-dom";
+
 
 function Botao() {
     return (
-    <a href={<Cart/>}className="cart-link">
-    Carrinho 🛒
-    <span className="cart-dot" id="cartDot"></span>
-    </a>
+              <Link to="/cart" className="cart-link">
+                Carrinho 🛒
+                <span className="cart-dot" id="cartDot"></span>
+              </Link>
     )
 }
 
